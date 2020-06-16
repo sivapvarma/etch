@@ -27,5 +27,9 @@
     {{ $css := $resources | resources.Concat "css/style.css" | minify }}
     {{ printf `<link rel="stylesheet" href="%s">` $css.RelPermalink | safeHTML }}
 
+    {{ if or .Params.katex .Site.Params.katex }}
+    {{ partial "katex.html" . }}
+    {{ end }}
+
     <title>{{ .Title }}</title>
 </head>
