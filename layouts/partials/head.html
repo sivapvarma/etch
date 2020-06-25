@@ -31,5 +31,8 @@
     {{ partial "katex.html" . }}
     {{ end }}
 
+    {{ template "_internal/google_analytics.html" . }}
+    {{ template "_internal/google_analytics_async.html" . }}
+
     <title>{{ .Title }}</title>
 </head>
