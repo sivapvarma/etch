@@ -1,3 +1,17 @@
 {{ define "main" }}
-{{- partial "posts.html" . -}}
+<!-- {{- partial "posts.html" . -}} -->
+<h3>{{.Title}}</h3>
+{{.Content}}
+<ul id="posts">
+<!-- Ranges through content/dir/*.md -->
+{{ range .Pages }}
+<li>
+    <a href="{{ .Permalink }}">
+        {{- .Title -}}
+        <small><time>{{ .Date.Format "Jan 2, 2006" }}</time></small>
+    </a>
+</li>
+{{ end }}
+</ul>
+
 {{ end }}
