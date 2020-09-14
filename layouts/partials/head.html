@@ -31,8 +31,10 @@
     {{ partial "katex.html" . }}
     {{ end }}
 
+    {{ if or .Params.ga .Site.Params.ga }}
     {{ template "_internal/google_analytics.html" . }}
     {{ template "_internal/google_analytics_async.html" . }}
+    {{ end }}
 
     <title>{{ .Title }}</title>
 </head>
