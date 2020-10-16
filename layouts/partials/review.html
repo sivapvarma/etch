@@ -1,7 +1,7 @@
-<h3>Posts</h3>
+<!-- review formating template -->
+<h3>Reviews</h3>
+{{ range where .Pages "Type" "in" site.Params.reviewSection }}
 <ul id="posts">
-    <!-- by default hugo sorts based on date -->
-{{ range where site.RegularPages "Type" "in" site.Params.postsSection }}
     <li>
         <a href="{{ .Permalink }}">
             {{- .Title -}}

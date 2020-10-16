@@ -1,0 +1,18 @@
+<!-- notes formating template -->
+<h3>Notes</h3>
+<!-- iteratining over folders in the notes dir -->
+{{ range where .Pages "Type" "in" site.Params.notesSection }}
+<h4><a href="{{ .Permalink }}">{{ .Title }} </a></h4> 
+<!-- iterating over child folders of the notes dir -->
+{{ range where .RegularPages "Type" "in" site.Params.notesSection }}
+<ul id="notes">
+    <li>
+        <a href="{{ .Permalink }}">
+            {{- .Title -}}
+            <!-- <small><time>{{ .Date.Format "Jan 2, 2006" }}</time></small> -->
+        </a>
+    </li>
+</ul>
+
+{{ end }}
+{{ end }}
