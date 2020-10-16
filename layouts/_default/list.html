@@ -1,17 +1,11 @@
 {{ define "main" }}
-<!-- {{- partial "posts.html" . -}} -->
-<h3>{{.Title}}</h3>
-{{.Content}}
-<ul id="posts">
-<!-- Ranges through content/dir/*.md -->
-{{ range .Pages }}
-<li>
-    <a href="{{ .Permalink }}">
-        {{- .Title -}}
-        <small><time>{{ .Date.Format "Jan 2, 2006" }}</time></small>
-    </a>
-</li>
+{{ if eq .Section "note" }}
+    {{- partial "notes.html" . -}}
 {{ end }}
-</ul>
-
+{{ if eq .Section "review" }}
+    {{- partial "review.html" . -}}
+{{ end }}
+{{ if eq .Section "tool"}}
+    {{- partial "tool.html" . -}}
+{{ end }}
 {{ end }}
