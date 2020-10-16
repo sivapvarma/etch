@@ -265,3 +265,9 @@ footer#footer {
     color: #949494;
     margin: 40px 0;
 }
+
+img-logo {
+    width: 10%;
+    height: auto;
+    align: margin-bottom;
+}
